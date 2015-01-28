@@ -5,7 +5,7 @@ ENV BAMBOO_DOWNLOAD_URL http://www.atlassian.com/software/bamboo/downloads/binar
 
 RUN set -x \
     && apt-get update \
-    && apt-get install -y --no-install-recommends git subversion mercurial \
+    && apt-get install -y --no-install-recommends git subversion mercurial ssh-client \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /opt/bamboo \
     && mkdir -p /home/bamboo \
