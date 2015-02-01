@@ -16,7 +16,7 @@ RUN set -x \
       bzip2 \
       docker.io=$DOCKER_VERSION \
       sbt=$SBT_VERSION \
-      nodejs=$NODEJS_VERSION \
+      nodejs \
     && rm -r /var/lib/apt/lists/* \
     && npm install gulpjs/gulp#4.0 -g \
     && curl -sSL $PACKER_DOWNLOAD_URL -o /tmp/packer.zip \
