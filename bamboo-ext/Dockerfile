@@ -13,6 +13,7 @@ RUN set -x \
     && echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list \
     && apt-get update \
     && apt-get install -y --no-install-recommends --force-yes \
+      bzip2 \
       docker.io=$DOCKER_VERSION \
       sbt=$SBT_VERSION \
       nodejs=$NODEJS_VERSION \
