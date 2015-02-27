@@ -25,3 +25,21 @@ RUN set -x \
     && curl -sSL $FLEET_DOWNLOAD_URL -o /tmp/fleet.tar.gz \
     && tar xzf /tmp/fleet.tar.gz -C /usr/bin fleet-v$FLEET_VERSION-linux-amd64/fleetctl --strip-components=1 \
     && rm /tmp/fleet.tar.gz
+
+# Google Cloud SDK
+RUN set -x \
+    && apt-get -qq update \
+    && apt-get install -qq --no-install-recommends python \
+    && curl -sSL https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz | tar -xzf - -C /opt \
+    && /opt/google-cloud-sdk/install.sh \
+      --usage-reporting=false \
+      --bash-completion=false \
+      --path-update=false \
+      --additional-components=preview \
+    && /opt/google-cloud-sdk/bin/gcloud components update \
+    && rm -r /var/lib/apt/lists/*
+
+ENV PATH /opt/google-cloud-sdk/bin:$PATH
+
+ADD ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
