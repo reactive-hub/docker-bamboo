@@ -1,8 +1,8 @@
 FROM reactivehub/bamboo
 
 ENV SBT_VERSION 0.13.8
-ENV PACKER_VERSION 0.7.5
-ENV PACKER_DOWNLOAD_URL https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip
+ENV PACKER_VERSION 0.8.0
+ENV PACKER_DOWNLOAD_URL https://dl.bintray.com/mitchellh/packer/packer_0.8.0_linux_amd64.zip
 ENV FLEET_VERSION 0.10.2
 ENV FLEET_DOWNLOAD_URL https://github.com/coreos/fleet/releases/download/v0.10.2/fleet-v0.10.2-linux-amd64.tar.gz
 
